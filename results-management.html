@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إدارة النتائج - مركز أم القرى</title>
+  <meta name="description" content="إدارة نتائج الطلاب في مركز أم القرى">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body class="admin-layout">
+
+  <!-- Admin Topbar -->
+  <nav class="admin-topbar">
+    <div class="admin-topbar-brand">
+      <img src="/assets/logo.png" alt="شعار مركز أم القرى" onerror="this.style.display='none'">
+      <span class="admin-topbar-title">مركز أم القرى - الإدارة</span>
+    </div>
+    <div class="admin-topbar-nav">
+      <a href="/admin-dashboard.html">🏠 <span class="btn-text-hide">الرئيسية</span></a>
+      <a href="/students.html">👥 <span class="btn-text-hide">الطلاب</span></a>
+      <a href="/results-management.html" class="active">📊 <span class="btn-text-hide">النتائج</span></a>
+      <a href="/admin-login.html" onclick="handleLogout(event)" style="color:rgba(255,255,255,0.7);">🚪 <span class="btn-text-hide">خروج</span></a>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="admin-content">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb mb-4">
+      <a href="/admin-dashboard.html">الرئيسية</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>إدارة النتائج</span>
+    </div>
+
+    <div style="max-width: 700px;">
+
+      <h1 style="font-size:var(--font-size-2xl); font-weight:800; color:var(--gray-800); margin-bottom:var(--space-6);">
+        📊 إدارة النتائج
+      </h1>
+
+      <!-- Student Selector -->
+      <div class="card mb-6">
+        <div class="card-header">
+          <h2>اختيار الطالب</h2>
+        </div>
+        <div class="card-body">
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" for="student-select">الطالب</label>
+            <select id="student-select" class="form-control">
+              <option value="">-- اختر الطالب --</option>
+            </select>
+          </div>
+          <div id="selected-student-name" style="margin-top:var(--space-3); font-size:var(--font-size-lg); font-weight:700; color:var(--primary-dark);"></div>
+        </div>
+      </div>
+
+      <!-- Result Form -->
+      <div id="result-form-section" style="display:none;">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h2 style="margin:0;">تعديل النتيجة</h2>
+              <p id="result-status" style="color:var(--gray-500); font-size:var(--font-size-sm); margin-top:var(--space-1);"></p>
+            </div>
+          </div>
+          <div class="card-body">
+
+            <!-- Error -->
+            <div id="form-error" class="alert alert-error" style="display:none;"></div>
+
+            <!-- Info -->
+            <div class="alert alert-info mb-4">
+              <span>ℹ️</span>
+              <span>يتم تحديث تاريخ آخر تعديل تلقائياً بواسطة قاعدة البيانات</span>
+            </div>
+
+            <form id="result-form" novalidate>
+              <div class="grid-2" style="gap:var(--space-4);">
+
+                <div class="form-group">
+                  <label class="form-label" for="field-attendance">الحضور (من 5)</label>
+                  <input type="number" id="field-attendance" class="form-control" placeholder="0" min="0" max="5" step="0.5">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="field-good_behavior">حسن التعامل والأدب (من 15)</label>
+                  <input type="number" id="field-good_behavior" class="form-control" placeholder="0" min="0" max="15" step="0.5">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="field-new_memorization">الحفظ الجديد (من 10)</label>
+                  <input type="number" id="field-new_memorization" class="form-control" placeholder="0" min="0" max="10" step="0.5">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="field-tajweed">التجويد (من 10)</label>
+                  <input type="number" id="field-tajweed" class="form-control" placeholder="0" min="0" max="10" step="0.5">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="field-final_exam">درجة الاختبار النهائي (من 60)</label>
+                  <input type="number" id="field-final_exam" class="form-control" placeholder="0" min="0" max="60" step="0.5">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="field-percentage">النسبة المئوية (%)</label>
+                  <input type="number" id="field-percentage" class="form-control" placeholder="تُحسب تلقائياً" min="0" max="100" step="0.01" readonly style="background-color: var(--gray-100);">
+                </div>
+
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="field-grade">التقدير</label>
+                <input type="text" id="field-grade" class="form-control" placeholder="يُحسب تلقائياً" readonly style="background-color: var(--gray-100);">
+              </div>
+
+              <div class="flex gap-3" style="flex-wrap:wrap; margin-top:var(--space-4);">
+                <button type="submit" class="btn btn-primary" id="save-result-btn">
+                  💾 حفظ النتيجة
+                </button>
+                <a href="/students.html" class="btn btn-ghost">العودة للطلاب</a>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2026 مركز أم القرى</p>
+  </footer>
+
+  <script>
+    async function handleLogout(e) {
+      e.preventDefault()
+      const { supabase } = await import('/js/supabase.js')
+      await supabase.auth.signOut()
+      window.location.href = '/admin-login.html'
+    }
+  </script>
+  <script type="module" src="/js/results-management.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الاستعلام عن النتيجة - مركز أم القرى</title>
+  <meta name="description" content="الاستعلام عن نتيجة الطالب في مركز أم القرى لتحفيظ القرآن الكريم">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <img src="/assets/logo.png" alt="شعار مركز أم القرى" class="header-logo" onerror="this.style.display='none'">
+        <div class="header-title">
+          <span class="center-name">مركز أم القرى</span>
+          <span class="center-subtitle">لتحفيظ القرآن الكريم والسنة النبوية</span>
+        </div>
+      </div>
+      <nav class="header-nav">
+        <a href="/">الرئيسية</a>
+        <a href="/results.html" class="active">الاستعلام عن النتيجة</a>
+        <a href="/admin-login.html">الإدارة</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="min-height: calc(100vh - 140px); display:flex; align-items:center; padding: var(--space-12) 0;">
+    <div class="container-sm">
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="/">الرئيسية</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>الاستعلام عن النتيجة</span>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h1 style="font-size:var(--font-size-2xl); font-weight:800; color:var(--primary-dark); margin:0;">
+              📋 الاستعلام عن النتيجة
+            </h1>
+            <p style="color:var(--gray-500); margin-top:var(--space-1); font-size:var(--font-size-sm);">
+              أدخل رقم القيد الخاص بالطالب لمعرفة النتيجة
+            </p>
+          </div>
+        </div>
+
+        <div class="card-body">
+
+          <!-- Info Alert -->
+          <div class="alert alert-info" style="margin-bottom: var(--space-6);">
+            <span>ℹ️</span>
+            <span>يمكنك معرفة رقم القيد من بطاقة الطالب أو من إدارة المركز</span>
+          </div>
+
+          <!-- Search Form -->
+          <form id="search-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="registration-number">
+                رقم القيد
+                <span class="required">*</span>
+              </label>
+              <div class="search-bar">
+                <input
+                  type="text"
+                  id="registration-number"
+                  class="form-control"
+                  placeholder="أدخل رقم القيد هنا..."
+                  autocomplete="off"
+                  required
+                >
+                <span class="search-icon">🔍</span>
+              </div>
+              <p class="form-hint">مثال: 2024001</p>
+            </div>
+
+            <!-- Result Message -->
+            <div id="result-message"></div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg" id="search-btn">
+              🔍 عرض النتيجة
+            </button>
+          </form>
+
+        </div>
+      </div>
+
+      <!-- Help Card -->
+      <div class="card mt-4" style="background: var(--primary-pale); border-color: var(--primary-light);">
+        <div class="card-body">
+          <h3 style="color:var(--primary-dark); margin-bottom:var(--space-3); font-size:var(--font-size-base);">
+            💡 هل تحتاج مساعدة؟
+          </h3>
+          <p style="color:var(--gray-700); font-size:var(--font-size-sm); line-height:1.8;">
+            إذا لم تتمكن من العثور على نتيجتك، يرجى التواصل مع إدارة المركز للحصول على رقم القيد الخاص بك.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2026 مركز أم القرى لتحفيظ القرآن الكريم والسنة النبوية</p>
+  </footer>
+
+  <script type="module" src="/js/results.js"></script>
+</body>
+</html>
