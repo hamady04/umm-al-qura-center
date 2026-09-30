@@ -121,11 +121,11 @@
   <script>
     async function handleLogout(e) {
       e.preventDefault()
-      const { supabase } = await import('/js/supabase.js')
+      const { supabase } = await import('./supabase.js')
       await supabase.auth.signOut()
       window.location.href = '/admin-login.html'
     }
   </script>
-  <script type="module" src="/js/student-management.js"></script>
+  <script type="module" src="./student-management.js"></script>
 </body>
 </html>
