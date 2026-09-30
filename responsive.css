@@ -1,0 +1,239 @@
+/* ============================================
+   Responsive Stylesheet - RTL
+   ============================================ */
+
+/* Tablet - max 1024px */
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-content {
+    padding: var(--space-4);
+  }
+
+  .hero h1 {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* Mobile - max 768px */
+@media (max-width: 768px) {
+  .container,
+  .container-sm,
+  .container-md {
+    padding: 0 var(--space-4);
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Header */
+  .header-inner {
+    padding: var(--space-3) var(--space-4);
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .header-title .center-name {
+    font-size: var(--font-size-base);
+  }
+
+  .header-nav {
+    gap: var(--space-2);
+  }
+
+  .header-nav a {
+    font-size: var(--font-size-xs);
+    padding: var(--space-1) var(--space-2);
+  }
+
+  /* Hero */
+  .hero {
+    padding: var(--space-10) var(--space-4);
+  }
+
+  .hero-logo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .hero h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .hero .subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* Admin Topbar */
+  .admin-topbar {
+    padding: var(--space-2) var(--space-4);
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .admin-topbar-nav {
+    gap: var(--space-1);
+    flex-wrap: wrap;
+  }
+
+  .admin-topbar-nav a {
+    font-size: var(--font-size-xs);
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .admin-topbar-nav .btn-text-hide {
+    display: none;
+  }
+
+  /* Cards */
+  .card-body {
+    padding: var(--space-4);
+  }
+
+  .card-header {
+    padding: var(--space-4);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Tables */
+  thead th,
+  tbody td {
+    padding: var(--space-3);
+  }
+
+  /* Actions */
+  .actions-cell {
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .actions-cell .btn {
+    font-size: var(--font-size-xs);
+  }
+
+  /* Login */
+  .login-card {
+    padding: var(--space-6);
+  }
+
+  .login-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Page header */
+  .page-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Student info grid */
+  .student-info-grid {
+    grid-template-columns: 1fr;
+    text-align: right;
+  }
+
+  .student-info-item {
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* Stat cards */
+  .stat-card {
+    padding: var(--space-4);
+  }
+
+  /* Modal */
+  .modal {
+    margin: var(--space-4);
+  }
+
+  .modal-footer {
+    flex-direction: column;
+  }
+
+  .modal-footer .btn {
+    width: 100%;
+  }
+
+  /* Toast */
+  .toast-container {
+    top: var(--space-3);
+    left: var(--space-3);
+    right: var(--space-3);
+    transform: none;
+    width: auto;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    flex-wrap: wrap;
+  }
+
+  /* Form */
+  .form-group {
+    margin-bottom: var(--space-4);
+  }
+}
+
+/* Small Mobile - max 480px */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: var(--font-size-xl);
+  }
+
+  .hero .subtitle {
+    font-size: var(--font-size-sm);
+  }
+
+  table {
+    font-size: var(--font-size-xs);
+  }
+
+  .btn {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--font-size-sm);
+  }
+
+  .btn-lg {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--font-size-base);
+  }
+
+  .header-title .center-subtitle {
+    display: none;
+  }
+
+  .result-table td {
+    padding: var(--space-3);
+    font-size: var(--font-size-sm);
+  }
+
+  .admin-content {
+    padding: var(--space-3);
+  }
+}
